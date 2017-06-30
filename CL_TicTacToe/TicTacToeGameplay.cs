@@ -14,7 +14,13 @@ namespace CL_TicTacToe
         public symbol[,] Gamefield { get; set; }
         public symbol Playersicon { get; set; }
         public bool Playerwon { get; set; }
-        public int Fullfields { get; set; }
+        
+        uint fullfields;
+        public uint Fullfields
+        {
+            get { return this.fullfields; }
+            set { if (value >= 0 && value <= 9) this.fullfields = value; }
+        }
 
         /// <summary>
         /// Constructur
